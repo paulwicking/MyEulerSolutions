@@ -3,7 +3,6 @@
 
 Problem1::Problem1()
 {
-    Solution();
 }
 
 Problem1::~Problem1()

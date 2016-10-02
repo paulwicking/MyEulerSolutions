@@ -4,7 +4,6 @@
 
 Problem3::Problem3()
 {
-    Solution();
 }
 
 Problem3::~Problem3()

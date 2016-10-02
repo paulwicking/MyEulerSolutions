@@ -4,7 +4,6 @@
 
 Problem4::Problem4()
 {
-    Solution();
 }
 
 Problem4::~Problem4()
@@ -56,5 +55,5 @@ bool Problem4::IsPalindrome(int ResultToCheck)
             }
         }
     }
-    return 0; // Number is not a palindrome
+    return false; // Number is not a palindrome
 }

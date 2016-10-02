@@ -12,7 +12,8 @@
 int main() {
     // TODO: create menu system
     
-    Problem5 ProblemSolution;
+    Problem5 Problem;
+    Problem.Solution();
     	
     return 0;
 }
