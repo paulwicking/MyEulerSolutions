@@ -29,7 +29,9 @@ void Problem5::Solution()
          )
     {
         // TODO: find number of common prime factors
-        // should be able to find 2 2 2 2 3 3 5 7 11 13 17 19
+        // Least common denominator is of interest. Use code below to find
+        // all factors. Then multiply each to find to which power the factor
+        // does not exceed the range, i.e. 2^4 etc.
 
         // TODO: this is possibly not required... study solution.
         // prime factorize each number 
