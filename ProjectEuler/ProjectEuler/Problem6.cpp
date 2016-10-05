@@ -32,7 +32,5 @@ void Problem6::Solution()
     SquareOfSums *= SquareOfSums;
     Result = SquareOfSums - SumOfSquares;
 
-
-    std::cout << "This problem has not been solved yet.\n";
     std::cout << "Result = " << Result;
 }
