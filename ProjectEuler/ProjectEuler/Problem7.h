@@ -5,6 +5,9 @@ public:
     Problem7();
     ~Problem7();
 
+    bool IsPrime(long long NumberToCheck);
+
+private:
     void Problem7::Solution();
 };
 

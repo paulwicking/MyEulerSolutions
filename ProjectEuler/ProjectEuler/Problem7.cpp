@@ -18,6 +18,24 @@ void Problem7::Solution()
 
     // What is the 10 001st prime number ?
 
+    auto Result = 0;
+
+    for (int i = 1; i <= 10001; i++)
+    {
+        // is this for statement smart or not?
+        for (auto j = 0; IsPrime(j); j++);
+        
+        Result = i;
+    }
+
+
+    std::cout << "The 10 001st prime number is " << Result;
+
+    // TODO remove this when finished
     std::cout << "This problem has not been solved yet.\n";
 
+}
+bool Problem7::IsPrime(long long NumberToCheck)
+{
+    // TODO: write function to check for prime numbers
 }
