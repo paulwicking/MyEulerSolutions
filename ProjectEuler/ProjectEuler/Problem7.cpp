@@ -20,12 +20,14 @@ void Problem7::Solution()
 
     auto Result = 0;
 
-    for (int i = 1; i <= 10001; i++)
+    for (int i = 1; i <= 10001; ++i)
     {
-        // is this for statement smart or not?
-        for (auto j = 0; IsPrime(j); j++);
-        
-        Result = i;
+        // TODO fix this loop
+		for (auto j = i; j <= i; ++j)
+		{
+			std::cout << "i is " << i << " and j is " << j << "\n";
+			if (IsPrime(j)) { Result = j; }
+		}
     }
 
 
@@ -35,7 +37,21 @@ void Problem7::Solution()
     std::cout << "This problem has not been solved yet.\n";
 
 }
+
 bool Problem7::IsPrime(long long NumberToCheck)
 {
     // TODO: write function to check for prime numbers
+	if (NumberToCheck <= 1) { return false; } 
+	if (NumberToCheck <= 3) { return true; } // 2 and 3 are primes
+	if ((NumberToCheck % 2 == 0) || (NumberToCheck % 3 == 0)) { return false; }
+
+	for (int i = 5; (i * i) <= NumberToCheck; (i + 6))
+	{
+		if ((NumberToCheck % i == 0) 
+			|| (NumberToCheck % (NumberToCheck + 2) == 0))
+		{
+			return false;
+		}
+	}
+	return true;
 }
