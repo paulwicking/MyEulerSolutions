@@ -20,38 +20,41 @@ void Problem7::Solution()
 
     auto Result = 0;
 
-    for (int i = 1; i <= 10001; ++i)
+    auto LastPrime = 0;
+    auto CurrentNumber = 0;
+    
+    for (int PrimeCounter = 0; PrimeCounter <= 10000; ++PrimeCounter)
     {
-        // TODO fix this loop
-		for (auto j = i; j <= i; ++j)
-		{
-			std::cout << "i is " << i << " and j is " << j << "\n";
-			if (IsPrime(j)) { Result = j; }
-		}
-    }
-
-
-    std::cout << "The 10 001st prime number is " << Result;
-
-    // TODO remove this when finished
-    std::cout << "This problem has not been solved yet.\n";
-
+        for (CurrentNumber = LastPrime+1; PrimeCounter <= 10000; ++CurrentNumber)
+        {
+            if (IsPrime(CurrentNumber))
+            {
+                LastPrime = CurrentNumber;
+                Result = LastPrime;
+                goto PrimeCounterLoop;
+            }
+        }
+    PrimeCounterLoop:;
+    }  
+    std::cout << "The 10 001st prime number is " << Result << std::endl;
 }
 
 bool Problem7::IsPrime(long long NumberToCheck)
 {
-    // TODO: write function to check for prime numbers
-	if (NumberToCheck <= 1) { return false; } 
-	if (NumberToCheck <= 3) { return true; } // 2 and 3 are primes
-	if ((NumberToCheck % 2 == 0) || (NumberToCheck % 3 == 0)) { return false; }
-
-	for (int i = 5; (i * i) <= NumberToCheck; (i + 6))
-	{
-		if ((NumberToCheck % i == 0) 
-			|| (NumberToCheck % (NumberToCheck + 2) == 0))
-		{
-			return false;
-		}
-	}
-	return true;
+    if (NumberToCheck <= 1) { return false; }
+    else if (NumberToCheck <= 3) { return true; } // 2 and 3 are primes
+    else if ((NumberToCheck % 2 == 0) || (NumberToCheck % 3 == 0)) 
+    { 
+        return false; 
+    } else {
+        for (int i = 5; i * i <= NumberToCheck; i += 6)
+        {
+            if ((NumberToCheck % i == 0)
+                || (NumberToCheck % (i + 2) == 0))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
 }
