@@ -18,15 +18,12 @@ void Problem8::Solution()
     // Find the thirteen adjacent digits in the 1000-digit number that have the
     // greatest product. What is the value of this product?
 
-    std::vector<unsigned long long> MyProducts;
-    std::vector<std::string> DigitsToMultiply;
-    std::string StringOfDigits = "";
-
     // read character by character from the string  
     for (size_t DigitPosition = 0;
          DigitPosition <= NumberAsString.length();
          ++DigitPosition)
     {
+        // build 13 digit strings without 0, reset when 0 is encountered
         if (StringOfDigits.size() < 13)
         {
             AddDigitToString(NumberAsString[DigitPosition], StringOfDigits);
@@ -38,9 +35,7 @@ void Problem8::Solution()
         }
     }
 
-    std::string CreateProduct;
-    unsigned long long Product = 1;
-    int Multiplier = 0;
+    // multiply digits in 13-digit numbers
     for (size_t Factors = 0;
          Factors < DigitsToMultiply.size();
          ++Factors)
@@ -53,15 +48,17 @@ void Problem8::Solution()
             str >> Multiplier;
             Product *= Multiplier;
         }
-        MyProducts.push_back(Product);
+        MyProducts.push_back(Product); // store product and reset
         Product = 1;
     }
+
+    // sort all products and output the result
     std::sort(MyProducts.begin(), MyProducts.end());
     std::cout
         << "The value of the greatest product of thirteen adjacent digits "
         << "in the 1000-digit number is "
         << MyProducts[MyProducts.size() - 1]
-        << std::endl;
+        << ".\n";
 }
 
 void Problem8::AddDigitToString(int DigitToAdd, std::string &StringToTouch)

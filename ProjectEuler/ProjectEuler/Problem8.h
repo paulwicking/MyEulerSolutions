@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <vector>
 
 class Problem8
 {
@@ -37,5 +38,11 @@ private:
         "71636269561882670428252483600823257530420752963450";
 
     void AddDigitToString(int DigitToAdd, std::string &StringToTouch);
+    std::vector<unsigned long long> MyProducts;
+    std::vector<std::string> DigitsToMultiply;
+    std::string StringOfDigits = "";
 
+    std::string CreateProduct = "";
+    int Multiplier = 0;
+    unsigned long long Product = 1;
 };
