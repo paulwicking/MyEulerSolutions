@@ -11,11 +11,12 @@
 #include "Problem6.h"
 #include "Problem7.h"
 #include "Problem8.h"
+#include "Problem9.h"
 
 int main() {
     // TODO: create menu system
     
-    Problem8 Problem;
+    Problem9 Problem;
     Problem.Solution();
     	
     return 0;
